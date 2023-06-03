@@ -29,7 +29,7 @@ export const Name = styled.span`
 export const Number = styled.span`
   text-align: right;
   font-weight: 500;
-  font-size: 22px;  
+  font-size: 22px;
   flex-basis: 33.333%;
 `;
 
@@ -37,8 +37,8 @@ export const Btn = styled.button`
   padding: 5px 15px;
   flex-basis: 15%;
   font-size: 18px;
-  font-weight: 500;  
-  border-radius: 5px;  
+  font-weight: 500;
+  border-radius: 5px;
   box-shadow: 0px 8px 30px rgba(12, 4, 35, 0.1);
   cursor: pointer;
   transition: all 250ms ease-in-out;

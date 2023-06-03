@@ -9,7 +9,7 @@ export const Container = styled.form`
 export const Label = styled.label`
   margin-bottom: 10px;
   font-weight: 500;
-  font-size: 24px;  
+  font-size: 24px;
 `;
 
 export const Input = styled.input`
@@ -18,7 +18,6 @@ export const Input = styled.input`
   font-size: 24px;
   border: none;
   border-radius: 5px;
-
 `;
 
 export const Btn = styled.button`

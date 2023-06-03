@@ -1,10 +1,10 @@
-import React,{Component} from 'react';
-import  ContactForm  from '../ContactForm/ContactForm';
+import React, { Component } from 'react';
+import ContactForm from '../ContactForm/ContactForm';
 import { nanoid } from 'nanoid';
-import  Filter  from '../Filter/Filter';
+import Filter from '../Filter/Filter';
 import { Title, Subtitle, Container } from './App.styled';
 import ContactList from '../ContactList/ContactList';
-   
+
 export class App extends Component {
   state = {
     contacts: [],
@@ -24,11 +24,11 @@ export class App extends Component {
           contact.number === newContact.number
       )
         ? alert(
-            `${ newContact.name} or ${newContact.number} is already in contacts`
+            `${newContact.name} or ${newContact.number} is already in contacts`
           )
         : { contacts: [newContact, ...contacts] }
     );
-  };  
+  };
   onFilter = e => {
     const { value } = e.currentTarget;
     this.setState({ filter: value });
@@ -39,16 +39,15 @@ export class App extends Component {
     }));
   };
   componentDidMount() {
-   const contacts= localStorage.getItem('contacts');
+    const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
     if (parsedContacts) {
-       this.setState({ contacts: parsedContacts });
+      this.setState({ contacts: parsedContacts });
     }
-   
   }
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
-      localStorage.setItem('contacts',JSON.stringify(this.state.contacts));
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
   render() {
@@ -69,4 +68,4 @@ export class App extends Component {
       </Container>
     );
   }
-};
+}

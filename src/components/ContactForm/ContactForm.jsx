@@ -1,11 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Container,
-  Input,
-  Label,
-  Btn,
-} from './ContactForm.styled';
+import { Container, Input, Label, Btn } from './ContactForm.styled';
 class ContactForm extends Component {
   state = {
     name: '',
@@ -14,7 +9,7 @@ class ContactForm extends Component {
   handleChange = e => {
     const { value, name } = e.currentTarget;
     this.setState({ [name]: value });
-  }; 
+  };
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
@@ -22,7 +17,7 @@ class ContactForm extends Component {
   };
   reset = () => {
     this.setState({ name: '', number: '' });
-  }
+  };
   render() {
     return (
       <>
