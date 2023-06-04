@@ -4,14 +4,14 @@ import { nanoid } from 'nanoid';
 import Filter from '../Filter/Filter';
 import { Title, Subtitle, Container } from './App.styled';
 import ContactList from '../ContactList/ContactList';
-
+const key = 'contacts';
 export class App extends Component {
   state = {
     contacts: [],
     filter: '',
   };
   componentDidMount() {
-    const contacts = localStorage.getItem('contacts');
+    const contacts = localStorage.getItem(key);
     const parsedContacts = JSON.parse(contacts);
     if (parsedContacts) {
       this.setState({ contacts: parsedContacts });
@@ -19,7 +19,7 @@ export class App extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+      localStorage.setItem(key, JSON.stringify(this.state.contacts));
     }
   }
   handlerSubmit = data => {
